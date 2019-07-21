@@ -119,6 +119,7 @@ class Trip
 
         $prevMeasure = $tripMeasures->first();
 
+        // Calculate avg speed between every measure
         while ($measure = $tripMeasures->next()) {
             $avgSpeed = $this->getAvgSpeed($prevMeasure, $measure, $this->getMeasureInterval());
 
