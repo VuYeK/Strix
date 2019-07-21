@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="trip_measures")
  * @ORM\Entity
  */
-class TripMeasures
+class TripMeasure
 {
     /**
      * @var int
@@ -34,6 +34,12 @@ class TripMeasures
      * @ORM\Column(name="distance", type="decimal", precision=5, scale=2, nullable=false)
      */
     private $distance;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Trip", inversedBy="trip_measures")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $trip;
 
     public function getId(): ?int
     {
@@ -60,6 +66,18 @@ class TripMeasures
     public function setDistance($distance): self
     {
         $this->distance = $distance;
+
+        return $this;
+    }
+
+    public function getTrip(): ?Trip
+    {
+        return $this->trip;
+    }
+
+    public function setTrip(?Trip $trip): self
+    {
+        $this->trip = $trip;
 
         return $this;
     }
