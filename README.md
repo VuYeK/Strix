@@ -1,4 +1,4 @@
-# Zadanie rekrutacyjne z PHP w firmie Strix: || Strix's PHP recruitment task
+# Zadanie rekrutacyjne z PHP w firmie Strix || Strix's PHP recruitment task
 
 ## Instalacja / Installation
 1. `git clone https://github.com/VuYeK/Strix.git`
